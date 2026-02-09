@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VesselUtil {
-
     private List<Vessel> vesselList;
 
     public VesselUtil() {
@@ -20,5 +19,29 @@ public class VesselUtil {
             }
         }
         return null;
+    }
+
+    public List<Vessel> getHighPerformanceVessels() {
+
+        List<Vessel> result = new ArrayList<>();
+
+        if (vesselList.isEmpty()) {
+            return result;
+        }
+
+        double maxSpeed = vesselList.get(0).getAverageSpeed();
+
+        for (Vessel vessel : vesselList) {
+            if (vessel.getAverageSpeed() > maxSpeed) {
+                maxSpeed = vessel.getAverageSpeed();
+            }
+        }
+
+        for (Vessel vessel : vesselList) {
+            if (vessel.getAverageSpeed() == maxSpeed) {
+                result.add(vessel);
+            }
+        }
+        return result;
     }
 }
