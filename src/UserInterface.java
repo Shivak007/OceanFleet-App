@@ -2,7 +2,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
-
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -23,7 +22,7 @@ public class UserInterface {
         util.addVesselPerformance(vessel);
         System.out.println("Vessel Added Successfully");
 
-        System.out.print("Enter Vessel ID to search:");
+        System.out.print("Enter Vessel ID to search: ");
         String searchId = sc.nextLine();
 
         Vessel result = util.getVesselById(searchId);

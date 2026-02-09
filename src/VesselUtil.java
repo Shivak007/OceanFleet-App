@@ -2,11 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VesselUtil {
-    private List<Vessel> vesselList;
 
-    public VesselUtil() {
-        vesselList = new ArrayList<>();
-    }
+    private List<Vessel> vesselList = new ArrayList<>();
 
     public void addVesselPerformance(Vessel vessel) {
         vesselList.add(vessel);
@@ -42,6 +39,7 @@ public class VesselUtil {
                 result.add(vessel);
             }
         }
+
         return result;
     }
 }
